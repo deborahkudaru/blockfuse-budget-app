@@ -1,30 +1,80 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Budget App</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
-    <div>
-      <h1 class="text-center text-3xl">Welcome to our Budget</h1>
-      <div class="bg-white p-5 rounded"></div>
-    </div>
+</head>
+<body>
+    <div className="desktop">
+      <header className="header">
+        <img
+          className="logo"
+          alt="Christmas Budget Logo"
+          src={christmasTreeImage}
+        />
+        <h1 className="title">BuD</h1>
+      </header>
 
-    <!-- input field -->
-    <div>
-      <input type="text" id="inputItem" placeholder="add item" />
-      <input type="number" id="priceInput" placeholder="add price" />
-    </div>
+      <main className="main-content">
+        <section className="budget-section">
+          <div className="welcome-card">
+            <h2 className="welcome-title">Welcome to BuD</h2>
+            <div className="budget-info">
+              <p className="total-budget">Total budget: N500,000</p>
+              <p className="balance">Balance: N500,000</p>
+              <p className="exceeded">Exceeded by: N100000</p>
+            </div>
+            <div className="budget-actions">
+              <button className="btn add-budget">Add budget</button>
+              <button className="btn update-budget">Update budget</button>
+            </div>
+          </div>
 
-    <!-- item div -->
-    <div>
-      <h4>items</h4>
-      <div id="itemsDiv">
+          <div className="budget-input">
+            <input
+              type="text"
+              placeholder="Enter a budget here"
+              className="budget-input-field"
+            />
+            <button className="btn update-budget">Update budget</button>
+          </div>
 
-      </div>
+          <div className="budgeted-items">
+            <h3 className="section-title">Budgeted Items</h3>
+            <ul className="item-list">
+                <li key={index} className="item">
+                  <img className="delete-icon" alt="Delete" src={deleteIcon} />
+                  <img className="item-image" alt="" src={item.img} />
+                  <span className="item-name">item name</span>
+                  <img
+                    className="radio-button"
+                    alt="Select"
+                    src={radioButtonIcon}/>
+                </li>
+
+            </ul>
+          </div>
+        </section>
+
+        <section className="history-section">
+          <h3 className="section-title">History</h3>
+          <ul className="history-list">
+                <li key={index} className="history-item">
+                  <img className="item-image" alt={item.name} src={item.img} />
+                  <span className="item-name">{item.name}</span>
+                  <div className="item-price">
+                    <span className="price-label">price</span>
+                    <span className="price-value">{item.price}</span>
+                  </div>
+                </li>
+          </ul>
+          <div className="total">
+            <span>Total: 200,000</span>
+          </div>
+        </section>
+      </main>
     </div>
-    <button id="save-btn">Save</button><br />
-    <script src="index.js"></script>
-  </body>
+</body>
 </html>
