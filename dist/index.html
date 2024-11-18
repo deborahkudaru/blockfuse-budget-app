@@ -4,17 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="output.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
-  <body class="px-[90px] bg-[url(./img/image.png)] bg-cover bg-center">
+  <body class="px-[90px] bg-[url(../images/image2.png)] bg-cover bg-center">
     <div className="desktop">
-      <header class="header flex">
-        <img width="50px" src="img/b4fe44b6-4faf-4e62-8d76-22d6f03e5355.jpeg" />
-        <h1 className="title">BuD</h1>
+      <header class="header flex mt-5">
+        <img src="../images/logo.png" alt="" />
       </header>
 
       <div class="flex flex-col md:flex-row">
@@ -22,19 +21,21 @@
           <div>
             <section class="budget-section">
               <div
-                class="welcome-card border rounded-md shadow-lg border-r [#002200]"
+                class="welcome-card border rounded-2xl shadow-lg border-r [#002200] my-5 bg-white"
               >
-                <div class="budget-info flex p-2">
+                <div class="budget-info flex p-4">
                   <div class="border-r border-black">
-                    <h2 class="welcome-title font-bold text-[40px]">
+                    <h2 class="welcome-title font-bold text-[40px] pr-10 pb-5 text-red-600">
                       Welcome to BuD
                     </h2>
-                    <div class="flex flex-row items-center ">
-                      <p className="total-budget">Total budget: </p>
-                      <input type="text" value="" placeholder="500" class="w-16 outline-none border ml-2 px-2" >
+                    <div class="flex flex-row items-center pb-7">
+                      <p className="total-budget">Total budget:</p>
+                      <input
+                        type="text"
+                        value=""
+                        class="w-16 outline-none border-0 ml-2 px-2"
+                      />
                     </div>
-                    
-                    
 
                     <div class="budget-actions flex gap-5">
                       <button
@@ -49,22 +50,26 @@
                       </button>
                     </div>
                   </div>
-                  <div>
-                    <p className="balance">Balance: N500,000</p>
-                    <p className="exceeded">Exceeded by: N100000</p>
+                  <div class="pl-10 pr-20 self-center">
+                    <p class="text-xl flex flex-col gap-4">
+                      <span>Balance: </span><span></span>
+                    </p>
+                    <p class="text-red-600 text-xl flex flex-col gap-4">
+                      <span>Exceeded by: </span>
+                      <span></span>
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div buttom class="shadow-xl border border-[#c0c0c0] p-4">
+              <div buttom class="border rounded-2xl shadow-lg border-r p-4 bg-white">
                 <div class="budget-input flex flex-col">
-                  <div class="flex flex-row w-full justify-between">
+                  <div class="flex gap-2">
                     <!-- bugeted item -->
-                    <div class="flex flex-col w-[60%]">
-                      <label for="">Item Name</label>
+                    <div class="">
                       <input
                         id="budget-input-field"
-                        class="py-2 px-[12px] border border-[#c0c0c0] mt-2 mb-6"
+                        class="py-2 px-[12px] border border-[#c0c0c0] mt-2 mb-6 w-96"
                         type="text"
                         placeholder="Enter a budget here"
                         class=""
@@ -72,13 +77,12 @@
                     </div>
 
                     <!-- item expected price -->
-                    <div class="flex flex-col w-[30%]">
-                      <label for="">Price</label>
+                    <div class="">
                       <input
                         id="budget-Amount-field"
-                        class="py-2 px-[12px] border border-[#c0c0c0] mt-2 mb-6"
+                        class="py-2 px-[12px] border border-[#c0c0c0] mt-2 mb-6 w-52"
                         type="number"
-                        placeholder="Enter a budget here"
+                        placeholder="Enter price"
                         class=""
                       />
                     </div>
@@ -86,7 +90,7 @@
 
                   <button
                     id="add-btn"
-                    class="btn update-budget bg-[#002200] text-white py-2 px-7 rounded-md"
+                    class="btn update-budget bg-[#002200] text-white py-2 px-7 rounded-md mb-6"
                   >
                     Add item to budget
                   </button>
@@ -119,29 +123,35 @@
           </div>
           <div></div>
         </main>
-          <!-- history -->
-        <section class="history-section md:w-1/4">
-          <h3 class="text-center section-title">History</h3>
-          <ul className="history-item">
-            <li
-              class="item flex justify-between bg-white px-5 border border-[#c0c0c0]"
-            >
-              <div class="flex gap-2">
-                <img
-                  class="w-[50px] h-[50px]"
-                  src="https://img.freepik.com/free-photo/pair-sock_1203-2448.jpg?ga=GA1.1.945534508.1726865207&semt=ais_hybrid "
-                  alt=""
-                />
-                <span class="item-name self-center">item name</span>
-              </div>
-              <div>
-                <p>Price</p>
-                <p class="font-bold">1200</p>
-              </div>
-            </li>
-          </ul>
-          <div class="total border-top border-[#c0c0c0]">
-            <span>Total: 200,000</span>
+        <!-- history -->
+        <section
+          class="history-section md:w-2/4 border rounded-2xl shadow-lg border-r [#002200] my-5 p-4 bg-white"
+        >
+          <h3 class="text-center section-title text-3xl font-bold mb-5 text-red-600">
+            History
+          </h3>
+          <div class="flex flex-col">
+            <ul className="history-item">
+              <li
+                class="item flex justify-between bg-white p-4 border border-[#c0c0c0] rounded-lg"
+              >
+                <div class="flex gap-2">
+                  <img
+                    class="w-[50px] h-[50px]"
+                    src="https://img.freepik.com/free-photo/pair-sock_1203-2448.jpg?ga=GA1.1.945534508.1726865207&semt=ais_hybrid "
+                    alt=""
+                  />
+                  <span class="item-name self-center">item name</span>
+                </div>
+                <div>
+                  <p>Price</p>
+                  <p class="font-bold">1200</p>
+                </div>
+              </li>
+            </ul>
+            <div class="border-t mt-52 border-[#c0c0c0] justify-end text-2xl">
+              <span class="self-end">Total: 200,000</span>
+            </div>
           </div>
         </section>
       </div>

@@ -15,8 +15,9 @@ let remainingBudget = document.querySelector("#remainingBudget");
 itemsDiv.textContent = "";
 
 // displaying budgeted items inside the item containers
-JSON.parse(localStorage.getItem("itemContainer")).forEach((itemList, itemId) => {
-itemsDiv.innerHTML += ` <li
+JSON.parse(localStorage.getItem("itemContainer")).forEach(
+  (itemList, itemId) => {
+    itemsDiv.innerHTML += ` <li
                     id=${itemList.id}
                     key="{index}"
                     class="item flex justify-between bg-white px-5 border border-[#c0c0c0]"
@@ -32,8 +33,8 @@ itemsDiv.innerHTML += ` <li
                     </div>
                     <i onclick="deleteItem(this)" class="delete-btn self-center fa-solid fa-delete-left"></i>
                   </li>`;
-});
- 
+  }
+);
 
 // adding items to itemContaniner=[] which is an array
 const saveItem = () => {
@@ -48,7 +49,7 @@ const saveItem = () => {
   };
 
   itemContainer.push(itemObj);
-  localStorage.setItem("itemContainer",JSON.stringify(itemContainer))
+  localStorage.setItem("itemContainer", JSON.stringify(itemContainer));
   inputItems.value = "";
   priceInput.value = "";
 
@@ -59,7 +60,7 @@ const saveItem = () => {
 const updateDisplay = () => {
   itemsDiv.textContent = "";
 
-  JSON.parse(localStorage.getItem("itemContainer")).forEach((itemList,) => {
+  JSON.parse(localStorage.getItem("itemContainer")).forEach((itemList) => {
     itemsDiv.innerHTML += ` <li
                       id=${itemList.id}
                       key="{index}"
@@ -79,20 +80,13 @@ const updateDisplay = () => {
   });
 };
 
-
 addBudget.addEventListener("click", () => {
   saveItem();
 });
 
-
-
-
-
 const deleteItem = (button) => {
   let parentId = button.parentElement.id;
-  itemContainer= itemContainer.filter(item => item.id !== parentId);
-  localStorage.setItem("itemContainer",JSON.stringify(itemContainer))
+  itemContainer = itemContainer.filter((item) => item.id !== parentId);
+  localStorage.setItem("itemContainer", JSON.stringify(itemContainer));
   updateDisplay();
 };
-
-
