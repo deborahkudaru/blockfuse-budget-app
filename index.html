@@ -5,48 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body class="px-[90px] bg-[url(./img/image.png)] bg-cover bg-center">
     <div className="desktop">
       <header class="header flex">
-        <img width="50px" src="img/b4fe44b6-4faf-4e62-8d76-22d6f03e5355.jpeg" 
-        />
+        <img width="50px" src="img/b4fe44b6-4faf-4e62-8d76-22d6f03e5355.jpeg" />
         <h1 className="title">BuD</h1>
       </header>
 
-<div class="flex">
-          <main class="main-content flex justify-between w-3/4">
-        <div>
-          <section class="budget-section">
-            <div
-              class="welcome-card border rounded-md shadow-lg border-r [#002200]"
-            >
-              <div class="budget-info flex p-2">
-                <div class="border-r border-black">
-                  <h2 class="welcome-title font-bold text-[40px]">
-                    Welcome to BuD
-                  </h2>
-                  <p className="total-budget">Total budget: N500,000</p>
+      <div class="flex">
+        <main class="main-content flex justify-between w-3/4">
+          <div>
+            <section class="budget-section">
+              <div
+                class="welcome-card border rounded-md shadow-lg border-r [#002200]"
+              >
+                <div class="budget-info flex p-2">
+                  <div class="border-r border-black">
+                    <h2 class="welcome-title font-bold text-[40px]">
+                      Welcome to BuD
+                    </h2>
+                    <p className="total-budget">Total budget: N500,000</p>
 
-                  <div class="budget-actions flex gap-5">
-                    <button
-                      class="bg-[#002200] text-white py-2 px-7 rounded-md"
-                    >
-                      Add budget
-                    </button>
-                    <button
-                      class="bg-[#002200] text-white py-2 px-7 rounded-md"
-                    >
-                      Update budget
-                    </button>
+                    <div class="budget-actions flex gap-5">
+                      <button
+                        class="bg-[#002200] text-white py-2 px-7 rounded-md"
+                      >
+                        Add budget
+                      </button>
+                      <button
+                        class="bg-[#002200] text-white py-2 px-7 rounded-md"
+                      >
+                        Update budget
+                      </button>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="balance">Balance: N500,000</p>
+                    <p className="exceeded">Exceeded by: N100000</p>
                   </div>
                 </div>
-                <div>
-                  <p className="balance">Balance: N500,000</p>
-                  <p className="exceeded">Exceeded by: N100000</p>
-                </div>
-              </div>
                 <!-- <div class="budget-actions flex gap-5">
                   <button class="bg-[#002200] text-white py-2 px-7 rounded-md">
                     Add budget
@@ -55,61 +57,76 @@
                     Update budget
                   </button>
                 </div> -->
+              </div>
 
+              <div buttom class="shadow-xl border border-[#c0c0c0] p-4">
+                <div class="budget-input flex flex-col">
+                  <input
+                    class="py-2 px-[12px] border border-[#c0c0c0] mt-2 mb-6"
+                    type="text"
+                    placeholder="Enter a budget here"
+                    class="budget-input-field"
+                  />
+                  <button
+                    class="btn update-budget bg-[#002200] text-white py-2 px-7 rounded-md"
+                  >
+                    Update budget
+                  </button>
+                </div>
 
-            </div>
-
-           <div buttom class=" shadow-xl border border-[#c0c0c0] p-4">
-             <div class="budget-input flex flex-col">
-              <input
-                class=" py-2 px-[12px] border border-[#c0c0c0] mt-2 mb-6"
-                type="text"
-                placeholder="Enter a budget here"
-                class="budget-input-field"
-              />
-              <button class="btn update-budget bg-[#002200] text-white py-2 px-7 rounded-md">Update budget</button>
-            </div>
-
-            <div class="budgeted-items flex flex-col ">
-              <h3 class="section-title text-2xl text-center">Budgeted Items</h3>
-              <ul className="item-list">
-                <li key="{index}" class="item flex justify-between bg-white px-5 border border-[#c0c0c0]">
-                    <div class="flex gap-2">
-                    <i class="self-center fa-regular fa-circle-dot"></i>
-                 <img class="w-[50px] h-[50px]" src="https://img.freepik.com/free-photo/pair-sock_1203-2448.jpg?ga=GA1.1.945534508.1726865207&semt=ais_hybrid " alt="">
-                  <span class="item-name self-center">item name</span>
-                    </div>
-                  <i class="self-center fa-solid fa-delete-left"></i>
-                </li>
-              </ul>
-            </div>
-           </div>
-          </section>
-        </div>
-        <div>
-
-        </div>
-      </main>
+                <div class="budgeted-items flex flex-col">
+                  <h3 class="section-title text-2xl text-center">
+                    Budgeted Items
+                  </h3>
+                  <ul className="item-list">
+                    <li
+                      key="{index}"
+                      class="item flex justify-between bg-white px-5 border border-[#c0c0c0]"
+                    >
+                      <div class="flex gap-2">
+                        <i class="self-center fa-regular fa-circle-dot"></i>
+                        <img
+                          class="w-[50px] h-[50px]"
+                          src="https://img.freepik.com/free-photo/pair-sock_1203-2448.jpg?ga=GA1.1.945534508.1726865207&semt=ais_hybrid "
+                          alt=""
+                        />
+                        <span class="item-name self-center">item name</span>
+                      </div>
+                      <i class="self-center fa-solid fa-delete-left"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div></div>
+        </main>
 
         <section class="history-section w-1/4">
-            <h3 class="text-center section-title">History</h3>
-             <ul className="history-item">
-                <li class="item flex justify-between bg-white px-5 border border-[#c0c0c0]">
-                    <div class="flex gap-2">
-                 <img class="w-[50px] h-[50px]" src="https://img.freepik.com/free-photo/pair-sock_1203-2448.jpg?ga=GA1.1.945534508.1726865207&semt=ais_hybrid " alt="">
-                  <span class="item-name self-center">item name</span>
-                    </div>
-                    <div>
-                        <p>Price</p>
-                        <p class="font-bold">1200</p>
-                    </div>
-                </li>
-              </ul>
-            <div class="total border-top border-[#c0c0c0]">
-              <span>Total: 200,000</span>
-            </div>
-          </section>
-</div>
+          <h3 class="text-center section-title">History</h3>
+          <ul className="history-item">
+            <li
+              class="item flex justify-between bg-white px-5 border border-[#c0c0c0]"
+            >
+              <div class="flex gap-2">
+                <img
+                  class="w-[50px] h-[50px]"
+                  src="https://img.freepik.com/free-photo/pair-sock_1203-2448.jpg?ga=GA1.1.945534508.1726865207&semt=ais_hybrid "
+                  alt=""
+                />
+                <span class="item-name self-center">item name</span>
+              </div>
+              <div>
+                <p>Price</p>
+                <p class="font-bold">1200</p>
+              </div>
+            </li>
+          </ul>
+          <div class="total border-top border-[#c0c0c0]">
+            <span>Total: 200,000</span>
+          </div>
+        </section>
+      </div>
     </div>
   </body>
 </html>
