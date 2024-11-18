@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
+
+  </head>
 <body>
-    <div className="desktop">
-      <header className="header">
+    <div class="desktop">
+      <header class="header">
         <img
           className="logo"
           alt="Christmas Budget Logo"
@@ -19,16 +20,16 @@
 
       <main className="main-content">
         <section className="budget-section">
-          <div className="welcome-card">
-            <h2 className="welcome-title">Welcome to BuD</h2>
-            <div className="budget-info">
+          <div class="p-[10px] flex flex-col rounded-lg border-solid border-[3px] w-[500px] m-[20px]">
+            <h2 class="text-black-500 font-bold text-[30px]">Welcome to BuD</h2>
+            <div class="flex">
               <p className="total-budget">Total budget: N500,000</p>
               <p className="balance">Balance: N500,000</p>
               <p className="exceeded">Exceeded by: N100000</p>
             </div>
-            <div className="budget-actions">
-              <button className="btn add-budget">Add budget</button>
-              <button className="btn update-budget">Update budget</button>
+            <div class="flex gap-[10px]">
+              <button class="bg-green-700 border-solid border-[2px] border-green-700 rounded-lg w-[150px]">Add budget</button>
+              <button class="bg-green-700 border-solid border-[2px] border-green-700 rounded-lg w-[150px]">Update budget</button>
             </div>
           </div>
 
