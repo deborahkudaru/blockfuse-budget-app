@@ -1,11 +1,13 @@
 let inputItems = document.querySelector("#budget-input-field");
 let priceInput = document.querySelector("#budget-Amount-field");
+let budgetInput = document.querySelector("#budget-input");
+let amount = document.querySelector("#amount")
 let itemContainer = JSON.parse(localStorage.getItem("itemContainer")) || [];
 let bugetHistory = JSON.parse(localStorage.getItem("history"))||[]
 let addBudget = document.querySelector("#add-btn");
 let updateBudget = document.querySelector("#update-btn");
 let itemsDiv = document.querySelector("#itemsDiv");
-
+alert("ready")
 // let saveBtn = document.getElementById("save-btn");
 let deleteBtn = document.querySelector("#delete-btn");
 // let checkItem = document.querySelector("#check")
@@ -82,6 +84,7 @@ const updateDisplay = () => {
 
 addBudget.addEventListener("click", () => {
   saveItem();
+  amount.innerHTML = Number(budgetInput.value)
 });
 
 const deleteItem = (button) => {
