@@ -1,13 +1,12 @@
 let inputItems = document.querySelector("#budget-input-field");
 let priceInput = document.querySelector("#budget-Amount-field");
-
 let itemContainer = JSON.parse(localStorage.getItem("itemContainer")) || [];
+let bugetHistory = JSON.parse(localStorage.getItem("history"))||[]
 let addBudget = document.querySelector("#add-btn");
 let updateBudget = document.querySelector("#update-btn");
 let itemsDiv = document.querySelector("#itemsDiv");
 
 // let saveBtn = document.getElementById("save-btn");
-
 let deleteBtn = document.querySelector("#delete-btn");
 // let checkItem = document.querySelector("#check")
 let exceededAmount = document.querySelector("#exceededAmount");
@@ -50,9 +49,10 @@ const saveItem = () => {
 
   itemContainer.push(itemObj);
   localStorage.setItem("itemContainer", JSON.stringify(itemContainer));
+  localStorage.setItem("history",JSON.stringify(itemContainer));
   inputItems.value = "";
   priceInput.value = "";
-
+  displayHistory()
   updateDisplay(itemContainer);
 };
 
@@ -90,3 +90,36 @@ const deleteItem = (button) => {
   localStorage.setItem("itemContainer", JSON.stringify(itemContainer));
   updateDisplay();
 };
+
+function displayHistory(){
+  let historyItems=JSON.parse(localStorage.getItem("history"))
+ let historyContainer= document.getElementById("history");
+ let totalContainer=document.getElementById("totalAmount");
+ historyContainer.innerHTML="";
+ historyItems.forEach(items => {
+     historyContainer.innerHTML +=`
+        <li
+                class="item flex justify-between bg-white p-4 border border-[#c0c0c0] rounded-lg"
+              >
+                <div class="flex gap-2">
+                  <img
+                    class="w-[50px] h-[50px]"
+                    src="https://img.freepik.com/free-photo/pair-sock_1203-2448.jpg?ga=GA1.1.945534508.1726865207&semt=ais_hybrid "
+                    alt=""
+                  />
+                  <span class="item-name self-center">${items.item}</span>
+                </div>
+                <div>
+                  <p>Price</p>
+                  <p class="font-bold">${items.price}</p>
+                </div>
+              </li>
+     `
+ })
+ const historyTotal=historyItems.reduce((acc, cur)=>{
+  return acc + Number(cur.price)
+ },0);
+ totalContainer.innerHTML=historyTotal
+}
+
+displayHistory()
